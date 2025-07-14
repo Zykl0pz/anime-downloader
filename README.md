@@ -13,6 +13,7 @@ El script requiere las siguientes dependencias:
 - **animeflv**: Biblioteca para interactuar con la API de AnimeFLV.
 - **cloudscraper**: Para manejar la protección de Cloudflare.
 - **lxml**: Para el procesamiento de XML y HTML.
+- **beautifulsoup4**: Para el scrapeo de la web.
 
 ## Instalación
 
@@ -61,7 +62,7 @@ El script requiere las siguientes dependencias:
 
 4. **Instalar las dependencias**:
    ```cmd
-   pip install animeflv cloudscraper lxml
+   pip install animeflv cloudscraper lxml beautifulsoup4
    ```
 
 5. **Ejecutar el script**:
