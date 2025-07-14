@@ -1,3 +1,6 @@
+## Agradecimientos a:
+Este proyecto está hecho basado en la API desarrollada por https://github.com/apiad , este es un script para facilitar la búsqueda de animes y acceso a sus links respectivos.
+
 ## Descripción del Script
 
 Este script permite buscar series de anime utilizando la API de AnimeFLV. Los usuarios pueden seleccionar una serie y un episodio específico, y el script proporcionará enlaces para ver el episodio seleccionado.
