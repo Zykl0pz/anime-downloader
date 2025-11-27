@@ -1,5 +1,4 @@
 from animeflv import AnimeFLV
-from animeflv.api import download_one
 from tqdm import tqdm
 import os
 import sys
