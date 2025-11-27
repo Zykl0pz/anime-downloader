@@ -1,256 +1,222 @@
-# 🎬 AnimeFLV Downloader
-
-Una herramienta avanzada en Python para buscar y descargar anime desde AnimeFLV.net con interfaz intuitiva y múltiples opciones de descarga.
+# Descargador de Anime - AnimeFLV
 
 ![Python](https://img.shields.io/badge/Python-3.6+-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+![License](https://img.shields.io/badge/Licencia-MIT-green.svg)
 
-## ✨ Características Principales
+Una herramienta de línea de comandos en Python para buscar y extraer enlaces de descarga de anime desde AnimeFLV.
 
-### 🚀 **Funcionalidades Avanzadas**
-- **🔍 Búsqueda inteligente** de animes con resultados organizados
-- **📥 Descarga por intervalos** - Descarga rangos completos de episodios
-- **🎯 Descarga individual** - Episodios específicos con un clic
-- **🌐 Múltiples servidores** - Visualización de todos los servidores disponibles
-- **📊 Progreso en tiempo real** - Barra de progreso para descargas largas
+## 📋 Tabla de Contenidos
 
-### 🎨 **Interfaz Mejorada**
-- **Menú interactivo** con navegación intuitiva
-- **Pantallas limpias** y bien organizadas
-- **Emojis y formato** para mejor experiencia de usuario
-- **Validación de entradas** robusta
+- [Descripción](#descripción)
+- [Características](#características)
+- [Prerequisitos](#prerequisitos)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Estructura del Proyecto](#estructura-del-proyecto)
+- [Contribución](#contribución)
+- [Licencia](#licencia)
+- [Aviso Legal](#aviso-legal)
 
-### ⚡ **Tecnología**
-- **Módulo animeflv** - Conexión directa con AnimeFLV.net
-- **Descargas concurrentes** - Manejo eficiente de múltiples episodios
-- **Manejo de errores** - Recuperación elegante de fallos
+## 🎯 Descripción
 
-## 📋 Requisitos del Sistema
+Este script proporciona una interfaz de línea de comandos interactiva para buscar anime en AnimeFLV y extraer enlaces de descarga de episodios. Permite tanto la extracción individual de enlaces por episodio como la extracción masiva de todos los episodios de una serie.
 
-### Dependencias Principales
+## ✨ Características
+
+- 🔍 **Búsqueda inteligente**: Busca anime por nombre con resultados en tiempo real
+- 📺 **Navegación interactiva**: Menús intuitivos para seleccionar anime y episodios
+- 🔗 **Extracción de enlaces**: Obtiene enlaces de múltiples servidores con información de calidad
+- 💾 **Exportación múltiple**: Guarda resultados en formato JSON o TXT
+- 📊 **Progreso visual**: Barra de progreso con tqdm para extracciones largas
+- ⚡ **Manejo de errores**: Gestión robusta de errores y reintentos automáticos
+- 🎨 **Interfaz amigable**: Pantallas limpias y mensajes informativos
+
+## 📋 Prerequisitos
+
+- Python 3.6 o superior
+- Conexión a Internet
+- Módulos Python listados en requirements.txt
+
+## 🚀 Instalación
+
+### 1. Clonar o descargar el script
 ```bash
-Python 3.6 o superior
-animeflv-api
-tqdm
-requests
-bs4
-```
-## 📋 Dependencias específicas para el script:
+# Si tienes el repositorio
+git clone <url-del-repositorio>
 
-### **Esenciales:**
-- **`animeflv-downloader`** - La API específica que usa tu script (del repo https://github.com/apiad/animeflv-downloader)
-- **`tqdm`** - Para las barras de progreso en las descargas
-- **`requests`** - Para las peticiones HTTP
-- **`beautifulsoup4`** - Para parsear HTML
-
-### **Para funcionalidades avanzadas:**
-- **`selenium`** - Necesario para algunos servidores de video
-- **`pathlib2`** - Para manejo de rutas (compatibilidad con Python 2/3)
-
-## 🔧 Instalación:
-
-```bash
-# Instalar todas las dependencias
-pip install -r requirements.txt
-
-# Instalación manual
-pip install animeflv-downloader tqdm requests beautifulsoup4 selenium pathlib2
+# O simplemente descarga el archivo anime.py
 ```
 
-**Versiones compatibles:**
-   - Python 3.6 o superior
-   - Las versiones especificadas son las mínimas recomendadas
-
-## 🚀 Instalación rápida:
-
+### 2. Instalar dependencias
 ```bash
-# Clona el repositorio de la API si no está en PyPI
-git clone https://github.com/apiad/animeflv-downloader.git
-cd animeflv-downloader
-pip install -r requirements.txt
-python setup.py install
+pip install animeflv tqdm
 ```
 
-## 🎮 Uso
+### 3. Verificar instalación
+```bash
+python anime.py
+```
 
-### Flujo Básico
-1. **Iniciar la aplicación**
+## 📖 Uso
+
+### Ejecución básica
+```bash
+python anime.py
+```
+
+### Flujo de trabajo típico
+
+1. **Iniciar la aplicación**:
    ```bash
    python anime.py
    ```
 
-2. **Buscar anime**
-   - Selecciona opción 1 del menú principal
-   - Ingresa el nombre del anime
+2. **Menú principal**:
+   ```
+   ==================================================
+            DESCARGADOR DE ANIME - ANIMEFLV
+   ==================================================
+   1. Buscar y descargar anime
+   2. Extraer todos los enlaces de un anime
+   3. Salir
+   ==================================================
+   ```
 
-3. **Seleccionar episodios**
-   - **Opción Individual**: Ver enlaces o descargar un episodio específico
-   - **Opción Intervalo**: Descargar un rango completo de episodios
+### Opción 1: Búsqueda y descarga individual
 
-### Ejemplo de Uso
+1. Selecciona la opción `1` del menú principal
+2. Ingresa el nombre del anime a buscar
+3. Selecciona el anime de la lista de resultados
+4. Elige el episodio deseado
+5. El sistema mostrará todos los enlaces disponibles
+
+**Ejemplo de salida**:
 ```
-🎬 DESCARGADOR DE ANIME - ANIMEFLV
-==================================================
-1. Buscar y descargar anime
-2. Salir
-==================================================
+📊 Se encontraron 3 enlaces:
+1. Servidor: Mega
+   URL: https://mega.nz/...
+   Calidad: 1080p
 
-Selecciona una opción: 1
-
-🔍 BUSQUEDA DE ANIME
-------------------------------
-Escribir nombre del anime: Attack on Titan
-
-📺 RESULTADOS DE BUSQUEDA
-------------------------------
-1. Shingeki no Kyojin
-2. Shingeki no Kyojin: Chronicle
-3. Attack on Titan: Junior High
-4. 🔙 Volver al menú principal
-
-Selecciona una opción: 1
-
-🎬 Shingeki no Kyojin
---------------------------------------------------
-📖 Descripción: La humanidad vive en ciudades...
-📊 Total de episodios: 75
---------------------------------------------------
-📋 Episodios (primeros 5 y últimos 5):
-   1. Episodio 1
-   2. Episodio 2
-   3. Episodio 3
-   4. Episodio 4
-   5. Episodio 5
-   ...
-   71. Episodio 71
-   72. Episodio 72
-   73. Episodio 73
-   74. Episodio 74
-   75. Episodio 75
-
-76. 📥 Descargar intervalo de episodios
-77. 🔗 Ver enlaces de un episodio
-78. 🔙 Volver a búsqueda
-79. 🏠 Menú principal
-
-Selecciona una opción: 76
+2. Servidor: MediaFire
+   URL: https://www.mediafire.com/...
+   Calidad: 720p
 ```
 
-## 📥 Descarga por Intervalos
+### Opción 2: Extracción masiva de enlaces
 
-### Características Exclusivas
-- **Rango flexible**: Especifica episodio inicial y final
-- **Validación automática**: Solo descarga episodios existentes
-- **Progreso visual**: Barra de progreso en tiempo real
-- **Manejo de errores**: Continúa descarga si un episodio falla
+1. Selecciona la opción `2` del menú principal
+2. Ingresa el nombre del anime
+3. Selecciona el formato de exportación:
+   - **JSON**: Estructurado, ideal para uso programático
+   - **TXT**: Formato legible para humanos
 
-### Ejemplo de Descarga por Intervalo
-```
-📥 DESCARGAR INTERVALO DE EPISODIOS
---------------------------------------------------
-🎬 Anime: Shingeki no Kyojin
-📊 Episodios disponibles: 75
---------------------------------------------------
-📈 Rango disponible: Episodio 1 a 75
-
-Episodio inicial: 10
-Episodio final: 15
-
-📋 Episodios a descargar (6):
-   - Episodio 10
-   - Episodio 11
-   - Episodio 12
-   - Episodio 13
-   - Episodio 14
-   - Episodio 15
-
-¿Descargar 6 episodios? (s/n): s
-Directorio de descarga (dejar vacío para actual): ./attack_on_titan
-
-📥 Iniciando descarga de 6 episodios...
-Descargando: 100%|██████████| 6/6 [15:30<00:00, 155.00s/ep]
+**Ejemplo de archivo JSON generado**:
+```json
+{
+  "anime": "Attack on Titan",
+  "anime_id": "shingeki-no-kyojin",
+  "fecha_extraccion": "2024-01-15T14:30:45",
+  "estadisticas": {
+    "total_episodios": 25,
+    "episodios_exitosos": 24,
+    "episodios_con_error": 1
+  },
+  "episodios": {
+    "1": {
+      "episodio": "1",
+      "enlaces": [
+        {
+          "servidor": "Mega",
+          "url": "https://...",
+          "calidad": "1080p"
+        }
+      ]
+    }
+  }
+}
 ```
 
 ## 🗂️ Estructura del Proyecto
 
 ```
-animeflv-downloader/
+anime-downloader/
 │
-├── anime.py              # Script principal
-├── README.md            # Este archivo
-└── requirements.txt     # Dependencias del proyecto
+├── anime.py                 # Script principal
+├── README.md               # Este archivo
+└── ejemplos/               # Ejemplos de uso (opcional)
+    ├── enlaces_ejemplo.json
+    └── enlaces_ejemplo.txt
 ```
 
-## 🔧 Configuración Avanzada
+### Funciones principales
 
-### Variables de Entorno (Opcional)
-```bash
-# Directorio por defecto para descargas
-export ANIME_DOWNLOAD_DIR="/ruta/descargas/anime"
+- `main()`: Función principal que maneja el flujo de la aplicación
+- `buscar_anime(api)`: Búsqueda y selección individual de episodios
+- `extraer_todos_enlaces(api)`: Extracción masiva de enlaces
+- `procesar_extraccion_enlaces(api, anime)`: Procesa la extracción con barra de progreso
+- `guardar_resultados()`: Guarda los resultados en los formatos soportados
 
-# Servidor preferido (si está disponible)
-export PREFERRED_SERVER="gocdn"
-```
+## 🔧 Configuración
 
-### Personalización
-Puedes modificar las siguientes variables en el código:
-- **Tiempo de espera** entre descargas
-- **Servidores preferidos**
-- **Formato de archivo** de salida
-- **Límite de episodios** mostrados
+El script no requiere configuración adicional. Sin embargo, puedes modificar:
 
-## 🐛 Solución de Problemas
+- **Tiempo de espera entre peticiones**: Modifica `time.sleep(0.5)` en `procesar_extraccion_enlaces()`
+- **Formato de fechas**: Modifica el formato en `datetime.now().strftime()`
 
-### Problemas Comunes
+## 🤝 Contribución
 
-1. **Error de conexión**
-   ```bash
-   # Verificar conexión a AnimeFLV
-   ping animeflv.net
-   ```
+Las contribuciones son bienvenidas. Para contribuir:
 
-2. **Dependencias faltantes**
-   ```bash
-   # Reinstalar todas las dependencias
-   pip install -r requirements.txt
-   ```
-
-3. **Episodios no encontrados**
-   - Verificar que el anime existe en AnimeFLV
-   - Comprobar la ortografía del nombre
-
-### Logs y Debug
-El script proporciona mensajes detallados de error. Para más información:
-```python
-# Habilitar modo debug (modificar anime.py)
-DEBUG = True
-```
-
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
-## ⚠️ Aviso Legal
-
-Este software está diseñado para uso educativo y personal. El usuario es responsable de verificar los derechos de autor y términos de uso del contenido descargado. Los desarrolladores no se hacen responsables del uso indebido de esta herramienta.
-
-## 🤝 Contribuciones
-
-¡Las contribuciones son bienvenidas! Por favor:
-
-1. Haz fork del proyecto
+1. Haz un fork del proyecto
 2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
 3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
+### Mejoras potenciales
+
+- [ ] Descarga automática de episodios
+- [ ] Soporte para múltiples idiomas
+- [ ] Interfaz gráfica (GUI)
+- [ ] Sistema de colas de descarga
+- [ ] Integración con gestores de descarga
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+
+## ⚠️ Aviso Legal
+
+Este script está diseñado únicamente para fines educativos y de aprendizaje. El usuario es responsable de cumplir con los términos de servicio de AnimeFLV y las leyes de copyright aplicables en su país. Los desarrolladores no se hacen responsables del uso indebido de esta herramienta.
+
+## 🐛 Solución de Problemas
+
+### Error: "ModuleNotFoundError: No module named 'animeflv'"
+**Solución**: Instala la dependencia faltante:
+```bash
+pip install animeflv
+```
+
+### Error: "No se encontraron resultados para tu búsqueda"
+**Solución**:
+- Verifica la conexión a Internet
+- Revisa la ortografía del nombre del anime
+- Intenta con nombres alternativos en inglés/japonés
+
+### Error: "No se encontraron enlaces para este episodio"
+**Solución**:
+- El episodio puede no estar disponible
+- Intenta con otro servidor
+- Espera y reintenta más tarde
+
 ## 📞 Soporte
 
-Si encuentras algún problema o tienes sugerencias:
-- Abre un **issue** en GitHub
-- Consulta la **documentación**
-- Revisa los **problemas conocidos**
+Si encuentras problemas o tienes preguntas:
+
+1. Revisa la sección de solución de problemas
+2. Verifica que todas las dependencias estén instaladas
+3. Asegúrate de usar la versión más reciente del script
 
 ---
 
-**¡Disfruta de tu anime!** 🎉
+**¡Disfruta usando el Descargador de Anime!** 🎉
